@@ -39,5 +39,19 @@ public class Main {
         }
         int gazdatlan = gazdatlanKutyakSzama();
         System.out.println("4.feladat 5.pontja : Gazdátlan/örökbefogadható kutyák száma:"+gazdatlan);
+        Set<Integer> idk = new HashSet<Integer>();
+        try(FileWriter fw = new FileWriter("hianyzoIDk.txt");
+            BufferedWriter bw = new BufferedWriter(fw)){
+
+            int act = 1;
+            for (int i = 0; i < kutyak.size(); i++) {
+                idk = (int)kutyak.get(i).getID();
+            }
+
+
+        } catch (IOException e){
+            System.out.println("Fájl írási hiba");
+        }
+
     }
 }
